@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_12_30_112456) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +22,7 @@ ActiveRecord::Schema.define(version: 2021_12_30_112456) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
 
   create_table "lots", force: :cascade do |t|
     t.integer "lot"
@@ -34,12 +37,15 @@ ActiveRecord::Schema.define(version: 2021_12_30_112456) do
     t.index ["raw_material_id"], name: "index_lots_on_raw_material_id"
   end
 
+
   create_table "raw_materials", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+
   add_foreign_key "lots", "categories"
   add_foreign_key "lots", "raw_materials"
+
 end
