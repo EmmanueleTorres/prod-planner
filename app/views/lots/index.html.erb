@@ -1,0 +1,35 @@
+<div class="container mt-3">
+  <ul class="list-inline">
+    <li class="list-inline-item display-5 fw-bold">Lotes</li>
+    <li class="list-inline-item display-5">|</li>
+    <li class="list-inline-item display-6 ms-2">Nuevo lote</li>
+  </ul>
+  <div class="row mt-2">
+    <div class="col-md-12">
+      <div class="table-responsive-md mt-1 mt-lg-5">
+        <table class="table">
+          <thead class=" text-primary">
+            <th>Lote</th>
+            <th>Fecha creación</th>
+            <th>Materia prima</th>
+            <th>Peso materia prima</th>
+            <th>Peso producto terminado</th>
+            <th>Rendimiento</th>
+          </thead>
+          <tbody>
+            <% @lots.each do |lot| %>
+              <tr>
+                <td><%= lot.lot_number %></td>
+                <td><%= lot.created_at.strftime("%d-%m-%Y") %></td>
+                <td><%= RawMaterial.all.find(lot.raw_material_id).name %></td>
+                <td><%= "#{lot.initial_weight} #{lot.measure_unit}" %></td>
+                <td><%= "#{lot.final_weight} #{lot.measure_unit}" %></td>
+                <td><%= lot.lot_yield %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

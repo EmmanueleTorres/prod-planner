@@ -32,12 +32,11 @@ end
 10.times do
   puts "creando lote #{lot_id}"
   Lot.create!(
-    lot: lot_id, 
+    lot_number: lot_id, 
     raw_material_id: RawMaterial.all.sample.id, 
-    category_id: Category.all.sample.id, 
-    weight: Faker::Number.between(from: 1, to: 10), 
+    initial_weight: Faker::Number.between(from: 1, to: 10), 
     measure_unit: "Kg", 
-    yield: Faker::Number.between(from: 1, to: 10)
+    final_weight: Faker::Number.between(from: 1, to: 10)
     )
     lot_id += 1
 end

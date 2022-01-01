@@ -1,17 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  lot: 1
-  weight: 1.5
+  lot_number: 1
+  initial_weight: 1.5
   measure_unit: MyString
-  yield: 1.5
+  final_weight: 1.5
   raw_material: one
-  category: one
 
 two:
-  lot: 1
-  weight: 1.5
+  lot_number: 1
+  initial_weight: 1.5
   measure_unit: MyString
-  yield: 1.5
+  final_weight: 1.5
   raw_material: two
-  category: two
